@@ -19,7 +19,7 @@
                 display: inline-block;
             }
             
-            .spinner::after {
+            .spinner::after, .spinner::before {
                 content: '';
                 display: block;
                 width: 100px;
@@ -37,6 +37,25 @@
                 animation: spin 2s linear infinite;
             }
             
+            .spinner-2 {
+                animation: spin 2s linear infinite;
+            }
+            
+            .spinner-2::before, .spinner-2::after {
+                height: 20px;
+                width: 20px;
+                background-color: orangered;
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                margin-left: -10px;
+            }
+            
+            .spinner-2::after {
+                top: auto;
+                bottom: -10px;
+            }
+            
             @keyframes spin {
                 0% {
                     transform: rotate(0deg) scale(1);
@@ -50,11 +69,25 @@
                     transform: rotate(360deg);
                 }
             }
+            
+            @keyframes spin2 {
+                0% {
+                    transform: rotate(0deg);
+                }
+                
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
         </style>
     </head>
     <body>
         <h1>Spinners</h1>
         <div class="spinner spinner-1">
+        </div>
+        
+        <div class="spinner spinner-2">
+            
         </div>
     </body>
 </html>
